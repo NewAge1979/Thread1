@@ -33,8 +33,8 @@ public class Main {
                 System.out.println(text.substring(0, 100) + " -> " + maxSize);
             };
             Thread thread = new Thread(analysis);
+            thread.start();
             threads.add(thread);
-            threads.get(threads.size() - 1).start();
         }
         for (Thread thread : threads) {
             thread.join(); // зависаем, ждём когда поток, объект которого лежит в thread завершится.
